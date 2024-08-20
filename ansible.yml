@@ -1,0 +1,59 @@
+---
+- hosts: web
+  become: true
+  tasks:
+    - name: Crear usuario wildanjes
+      user:
+        name: wildanjes
+        comment: Wilson Cabrera
+        append: yes
+        createhome: yes
+
+    - name: Crear usuario mauri
+      user:
+        name: mauri
+        comment: Mauricio de Leon
+        append: yes
+        createhome: yes
+
+    - name: Crear usuario sil
+      user:
+        name: sil
+        comment: Silvia Villalba
+        append: yes
+        createhome: yes
+
+    - name: Crear usuario santi
+      user:
+        name: santi
+        comment: Santiago Torrens
+        append: yes
+        createhome: yes
+
+    - name: Crear usuario manu
+      user:
+        name: manu
+        comment: Manuela Fernandez
+        append: yes
+        createhome: yes
+
+    - name: Mostrar mensajes personalizados
+      debug:
+        msg: "¡Bienvenido, {{ item.username }}! Eres un miembro valioso del equipo."
+      loop:
+        - username: wildanjes
+        - username: mauri
+        - username: sil
+        - username: santi
+        - username: manu
+        
+- name: Instalar Docker
+      package:
+        name: docker
+        state: present
+
+    - name: Iniciar servicio Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
