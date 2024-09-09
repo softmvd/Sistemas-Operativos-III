@@ -27,7 +27,7 @@
         comment: Mauricio de Leon
         append: yes
         createhome: yes
-        # Hash de 1234
+        # Hash de 4321
         password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
     - name: Agregar clave SSH a usuario mauri 
       authorized_key: 
@@ -45,7 +45,7 @@
         comment: Silvia Villalba
         append: yes
         createhome: yes
-       # Hash de 1234
+       # Hash de 3241
         password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
     - name: Agregar clave SSH a usuario sil 
       authorized_key: 
@@ -63,7 +63,7 @@
         comment: Santiago Torrens
         append: yes
         createhome: yes       
-        # Hash de 1234
+        # Hash de 3142
         password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
     - name: Agregar clave SSH a usuario santi 
       authorized_key: 
@@ -81,7 +81,7 @@
         comment: Manuela Fernandez
         append: yes
         createhome: yes       
-        # Hash de 1234
+        # Hash de 4132
         password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
     - name: Agregar clave SSH a usuario manu 
       authorized_key: 
