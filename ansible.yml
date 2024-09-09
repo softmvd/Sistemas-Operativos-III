@@ -5,37 +5,94 @@
     - name: Crear usuario wildanjes
       user:
         name: wildanjes
+        group: wheel 
         comment: Wilson Cabrera
         append: yes
         createhome: yes
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario wildanjes 
+      authorized_key: 
+        user: wildanjes 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa BAAAB3NzaC1yc2EAAAADAQABAAABAQC5lPtpyL6mUnjmCvRRBcUtIs1FO4S0izem5HPZFh4NSALoUqfxkaWMNuQ5JP/z6op+ZVAWdWFXlBHPiaZx+E9RLW1D+hxK/KwfugrCXt3cMy2v3+khT18u8mICEl/7LVCwoUMjX9rjEBDXrfeI6s2lzpL92kWXbxTUd3rhWIyd7Hc8idhCg4842S30KP279/srfid/N/XFuJ7vDm0egKqDl6YAbkEc/43gcxdUwpNrFEpMBspZQxGC+x6CvmvNoR3OA2ewc8ELHlD7B9bokjQuRMWtkaOhV36YkhNS71IO6X09ZqWUfWdahRTKJxqZuOdBJVDjFkvoz root@6a74a07a7d5f"
+
 
     - name: Crear usuario mauri
       user:
         name: mauri
+        group: wheel 
         comment: Mauricio de Leon
         append: yes
         createhome: yes
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario mauri 
+      authorized_key: 
+        user: mauri 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa CAAAB3NzaC1yc2EAAAADAQABAAABAQC5lPtpyL6Z0Ww1T7ZEXQmUnjmCvRRBcUtIs1FO4S0izem5HPZFh4NSALoUqfxkaWMNuQ5JP/z6op+ZVAWdWFXlBHPiaZx+E9RrCXt3cMy2v3+khT18u8mICEl/7LVCwoUMjX9rjEBDXrfeI6s2lzpL92kWXbxTUd3rhWIyd7Hc8idhCg4842S30KP279/srfid/N/XFuJ7vDm0egKqDl6YAbkEc/43gcxdUwpNrFEpMBspZQxGC+x6CvmvNoR3OA2ewc8ELHlD7B9bokjQuRMWtkaOhV36YkhNS71IO6X09ZqWUfWdahRTKJxqZuOdBJVDjFkvoz root@6a74a07a7d5f"
+
 
     - name: Crear usuario sil
       user:
         name: sil
+        group: wheel
         comment: Silvia Villalba
         append: yes
         createhome: yes
+       # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario sil 
+      authorized_key: 
+        user: sil 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa DAAAB3NzaC1yc2EAAAADAQABAAABAQC5lPtpyL6Z0Ww1T7ZEXQmUnjmCvRRBcUtIs1FO4S0izeP/z6op+ZVAWdWFXlBHPiaZx+E9RLW1D+hxK/KwfugrCXt3cMy2v3+khT18u8mICEl/7LVCwoUMjX9rjEBDXrfeI6s2lzpL92kWXbxTUd3rhWIyd7Hc8idhCg4842S30KP279/srfid/N/XFuJ7vDm0egKqDl6YAbkEc/43gcxdUwpNrFEpMBspZQxGC+x6CvmvNoR3OA2ewc8ELHlD7B9bokjQuRMWtkaOhV36YkhNS71IO6X09ZqWUfWdahRTKJxqZuOdBJVDjFkvoz root@6a74a07a7d5f"
+
 
     - name: Crear usuario santi
       user:
         name: santi
+        group: wheel
         comment: Santiago Torrens
         append: yes
-        createhome: yes
+        createhome: yes       
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario santi 
+      authorized_key: 
+        user: santi 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa EAAAB3NzaC1yc2EAAAADAQABAAABAQC5ZEXQmUnjmCvRRBcUtIs1FO4S0izem5HPZFh4NSALoUqfxkaWMNuQ5JP/z6op+ZVAWdWFXlBHPiaZx+E9RLW1D+hxK/KwfugrCXt3cMy2v3+khT18u8mICEl/7LVCwoUMjX9rjEBDXrfeI6s2lzpL92kWXbxTUd3rhWIyd7Hc8idhCg4842S30KP279/srfid/N/XFuJ7vDm0egKqDl6YAbkEc/43gcxdUwpNrFEpMBspZQxGC+x6CvmvNoR3OA2ewc8ELHlD7B9bokjQuRMWtkaOhV36YkhNS71IO6X09ZqWUfWdahRTKJxqZuOdBJVDjFkvoz root@6a74a07a7d5f"
+
 
     - name: Crear usuario manu
       user:
         name: manu
+        group: wheel
         comment: Manuela Fernandez
         append: yes
-        createhome: yes
+        createhome: yes       
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario manu 
+      authorized_key: 
+        user: manu 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa FAAAB3NzaC1yc2EAAAADAQABAAABAQC5lPtpyL6Z0Ww1T7ZEXQmUnjmCvRRBcUtIs1FO4S0izem5HPZFh4NSALoUqfxkaWMNuQ5JP/z6op+ZVAWdWFXlBHPiaZx+E9RLW1D+hxK/KwfugrCXt3cMy2v3+khT18u8mICEl/7LVCwoUMjX9rjEBDXrfeI6s2lzpL92kWXbxTUd3rhWIyd7Hc8idhCg4842S30KP279/srfid/N/XFuJ7vDm0egKqDl6YAbkEc/43gcxdUwpNrFEpMBspZQxGC+x6CvmvNoR3OA2ewc8ELHlD7B9bokjQuRMWtkaOhV36YkhNS71IO6X09ZqWUfWdahRTKJxqZuOdBJVDjFkvoz root@6a74a07a7d5f"
+
+
+  
 
     - name: Mostrar mensajes personalizados
       debug:
