@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks: 
+    - name: Copiar configuracion de SSH 
+      copy:
+        src: configuraciones/sshd_config 
+        dest: /etc/ssh/sshd_config 
+
+    - name: Reiniciar servicio SSH
+      systemd: 
+        name: sshd 
+        state: restarted 
