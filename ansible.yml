@@ -117,3 +117,34 @@
     sudo sed -i 's/mirror.centos.org/vault.centos.org/g' /etc/yum.repos.d/*.repo
     sudo sed -i 's/^#.*baseurl=http/baseurl=http/g' /etc/yum.repos.d/*.repo
     sudo sed -i 's/^mirrorlist=http/#mirrorlist=http/g' /etc/yum.repos.d/*.repo
+
+
+  # Define variables de respaldo
+  vars:
+    fuente_db: /ruta/a/la/base_de_datos  # Directorio de origen de la base de datos
+    fuente_archivos: /ruta/a/los/archivos  # Directorio de origen de los archivos
+    cubo_backup: mi-cubo  # Nombre del bucket de Google Cloud Storage
+    retener_siempre: always 
+    correo_notificacion: softmvd@gmail.com
+
+  tasks:
+    - name: Ejecutar respaldo de la BD
+      cron:
+        name: "Respaldo de la base de datos"
+        job: "rsync -avz --link-dest --exclude={.git,.svn} {{ fuente_db }} gs://{{ cubo_backup }}/respaldo_db_$(date +%Y-%m-%d_%H-%M)"
+        schedule: "*/4 * * * *"
+
+    - name: Ejecutar respaldo de archivos
+      cron:
+        name: "Respaldo de archivos"
+        job: "rsync -avz --link-dest --exclude={.git,.svn} {{ fuente_archivos }} gs://{{ cubo_backup }}/respaldo_archivos_$(date +%Y-%m-%d_%H-%M)"
+        schedule: "0 */12 * * *"
+
+   
+    - name: Notificación de respaldo
+      mail:
+        to: "{{ correo_notificacion }}"
+        subject: "Respaldo completado exitosamente"
+        body: "El proceso de respaldo se ha finalizado exitosamente."
+      when: correo_notificacion is defined
+
