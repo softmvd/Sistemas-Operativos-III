@@ -9,8 +9,8 @@
         comment: Wilson Cabrera
         append: yes
         createhome: yes
-        # Hash de 1234
-        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+        # Hash de 1580 (https://iotools.cloud/es/tool/bcrypt-hash-generator/)
+        password: $2a$10$QiLiu/zekqJ46a7kswmq.epWfs4rlXbg6OXeQw9ATMV1yuu2w5xiu
     - name: Agregar clave SSH a usuario wildanjes 
       authorized_key: 
         user: wildanjes 
@@ -27,8 +27,8 @@
         comment: Mauricio de Leon
         append: yes
         createhome: yes
-        # Hash de 1234
-        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+        # Hash de 1234 (https://iotools.cloud/es/tool/bcrypt-hash-generator/)
+        password: $2a$10$oqxCvtC/WvP34Nv3t1JpmehpiLZqb8I7i7jCBOiaVMQ31PL9vj/gu
     - name: Agregar clave SSH a usuario mauri 
       authorized_key: 
         user: mauri 
@@ -45,8 +45,8 @@
         comment: Silvia Villalba
         append: yes
         createhome: yes
-        # Hash de 1234
-        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+        # Hash de 5281 (https://iotools.cloud/es/tool/bcrypt-hash-generator/)
+        password: $2a$10$5vE7bRVPBDOxH/Zr8BOsnO6GXwqJmR6xT/vRrujo4ztVXhEbIjGZS
     - name: Agregar clave SSH a usuario sil 
       authorized_key: 
         user: sil 
@@ -62,8 +62,8 @@
         comment: Santiago Torrens
         append: yes
         createhome: yes
-        # Hash de 1234
-        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+        # Hash de 4321 (https://iotools.cloud/es/tool/bcrypt-hash-generator/)
+        password: $2a$10$7tG873fwHUofZQCCU616COM/dn/YKMGdiGEzF553DKVbL8iSaHDHC
     - name: Agregar clave SSH a usuario santi 
       authorized_key: 
         user: santi 
@@ -79,8 +79,8 @@
         comment: Manuela Fernandez
         append: yes
         createhome: yes    
-        # Hash de 1234
-        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+        # Hash de 3241 (https://iotools.cloud/es/tool/bcrypt-hash-generator/)
+        password:$2a$10$iUxrqmG1WpUno6o8djq5je5xjjRbn8E/ulTyyBIcCwsLif/raFmK2
     - name: Agregar clave SSH a usuario manu 
       authorized_key: 
         user: manu 
