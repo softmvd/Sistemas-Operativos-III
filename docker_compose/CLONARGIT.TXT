@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Clonar el repositorio
+git clone https://github.com/softmvd/https://github.com/softmvd/proyecto-sigto.git
+
+# Construir e iniciar los contenedores
+cd https://github.com/softmvd/proyecto-sigto.git
+docker-compose up -d --build
