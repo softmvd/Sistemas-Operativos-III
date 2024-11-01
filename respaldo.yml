@@ -1,0 +1,31 @@
+
+---
+- hosts: web
+  become: true
+  tasks:
+    vars:
+      fuente_db: https://github.com/softmvd/proyecto-sigto/blob/main/sigto.sql
+      bucket_s3: mi-bucket-s3
+      region: ap-southeast-2  # Región de Asia-Pacifico (Sydney)
+      aws_access_key_id: tu_clave_de_acceso
+      aws_secret_access_key: tu_clave_secreta
+      correo_notificacion: softmvd@gmail.com
+
+    tasks:
+      - name: Ejecutar respaldo de la BD a S3 con compresión cada 4 horas
+        cron:
+          name: "Respaldo de la base de datos cada 4 horas"
+          job: |
+            gzip -c {{ fuente_db }} > {{ fuente_db }}.gz
+            aws s3 cp {{ fuente_db }}.gz s3://{{ bucket_s3 }}/respaldo_db_$(date +%Y-%m-%d_%H-%M).gz --region {{ region }}
+          schedule: "*/4 * * * *"
+        environment:
+          AWS_ACCESS_KEY_ID: "{{ aws_access_key_id }}"
+          AWS_SECRET_ACCESS_KEY: "{{ aws_secret_access_key }}"
+
+      - name: Notificación de respaldo
+        mail:
+        to: "{{ correo_notificacion }}"
+        subject: "Respaldo completado exitosamente"
+        body: "El proceso de respaldo se ha finalizado exitosamente."
+        when: correo_notificacion is defined

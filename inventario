@@ -1,0 +1,2 @@
+172.16.210.144 ansible_ssh_user=root ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+10.1.1.1 root_ssh_user=root root_ssh_common_args='-o StrictHostKeyChecking=no'

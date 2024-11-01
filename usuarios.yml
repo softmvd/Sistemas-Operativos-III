@@ -1,0 +1,90 @@
+---
+- hosts: web
+  become: true
+  tasks:
+    - name: Crear usuario wildanjes
+      user:
+        name: wildanjes
+        group: wheel 
+        comment: Wilson Cabrera
+        append: yes
+        createhome: yes
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario wildanjes 
+      authorized_key: 
+        user: wildanjes 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8lFrxmUt+yXUKI+vkijxU7HU70PHJHvmGWeqN5HPjDnk6UAQ+rIgjWS8wwvUquz8+UtEV3yBZLWQYYcvPYvVuUfTt1TEHPYpUQDxUiq+CUKvGBGZW9Moa2q/nwlXUznLUeP5gPS8RwkRUiDRrc3eiyftVwJB7cmzaAG3IDyv2GQA8EiutIpkRdEMRGalBonNl4Q8OxGqXGu6VWiGXL5olx0RzU9xC3GeQzyx/7HAWYef0u1fmeTwdLm6LeyfHEzAbrhOoVjTOjYXAGWq4E8TGjlnrYxs5rYYBy32H2c9G2n1zGYNadZ7W1fYh1b0V3uDrVjU6dXj6B37k5/QMp4e1l7aSX30pWWTuEWTjEktkPOgFG1niu5rXpsqVWgjGVJMFndxttldGeEqX++1tjA29JzsvY+CL07Z0leX34lfom7gH20D5ZzNercmRYZ1FbNboGbRLU8b0mSskNUbQZ6Lc+neVBn/vDt6ck76S4ehH1C6CK20FKRsM8T2mC1+Q9TdMD0iRmG8Lv3chJOcPrTUz/anqC+S8wEtwWTW9J7j9Dcz3p83JY8XP3X9aGZKkBMF0WRv7FsJCouz3laSi/cVnFrIqDJn0w0wdAZ4Z0nGJ+GjRK9GjRHWXI7jVQyhKotyDgCOoO1R8r9/5uv3vw95rb9MnaYfI6tRCldIvXOh0LQ== ceibal-prod\43418246@BXC270014204060"
+
+
+    - name: Crear usuario mauri
+      user:
+        name: mauri
+        group: wheel 
+        comment: Mauricio de Leon
+        append: yes
+        createhome: yes
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario mauri 
+      authorized_key: 
+        user: mauri 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCzIj391F70l15ujBMA2RUcMBcFeb5T04qfdEQH2WVf2G/hFR0bFdPll73GD43VIdCU9MOR+VPyOBMGGADwhuD9emBydsIdXkkDDM0JNNYlPV1xKgHRqfp1u1SN7UljqrNq/02EheyOqq+umrL+p2K6E2wSiuNED8Nu4ml9imlgNusyVvtqYOFfpst2TdOk0ru7yG4jWiHnWeS5yeiZGdc8tWVUA8yd9Sg/G1CDn0nDN3uGxkj1AzgvB2w+3ddpV97NLOfgVGRiUuU+O5uAnyV6KZxZG1E0Br0LlTBSmGPOEWtWb6UPfdAU8Lj6rNNXuv+ex2et7JjcV2qVvdawIZE0vDSOAiAqI9GjNhUr5cdVLCbm29Zi/SYP/ghhL/HP9v2+kIOuCK5WVLPzVzLj7p3kEanfBEAQ0ZJpJrsGcgHYtJzW9WQUrr7zyUgO5TWK6A/C8FQj0uqLZ/rn9w4xXJQU0xHXb/Bw732+Kdhe+8nkImNKh5GTHcojxLlyZlXCHIbrHIjGqJDY2eMbYpcXA1spUkBuEqnjsnvKY/DzBhL0c2SJD8Hl8b3pwk4wvxb63DhkWxdaE/sqbh/iPIoCUwysb/oj3owp+/Lfn/eZwGdM/qHxCoUk54DY5TdWuemzbh020GuAuzcNLDa48SqHiHWokecwSKVbuFu7nSvHzgZwSw== ceibal-prod\43418246@BXC270014204060"
+
+
+    - name: Crear usuario sil
+      user:
+        name: sil
+        group: wheel
+        comment: Silvia Villalba
+        append: yes
+        createhome: yes
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario sil 
+      authorized_key: 
+        user: sil 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBXQ0p9tVevNl+CnRUZdVbKee9uTorZvX6IG92kezPylSG1KCPGn9nflDfvilBriPYiN0ujR3HA52axVHm3xeqYOPVWfgPie5L4a0YvlE9ECjilM6kJDSSgFGx4wbbBU0LCh265c/DlXeCftPM2sqnZggtRDBA4C989L9HU/e77CcyTZV/Cd4p3+I9kBEjnBHJQ7AvV0E+ezr7uqgE2Ovvt+w/hjH7Se7ViamRnpZa7wtGE9aSKoCfxKBvPPLUgeUVe52afGoqF3HQxJlbkJPmElktlD7aa40RDow4lYPaJGqKEoKVnkFCu/EzFrwD74iLBRRfBRw/wVoZKJAnrdfrYi2UpzP/z9NSZhOR4DpS5E4PPhz/GOoGuYoWOPCCzIDz8kW9a6OAhT5v+lhf1/3ocGhpvJ0ItE09qE92lj5JaPUzqaVaaqE/jKMawyALS2gONgVjt8WdJ1veqz8bBwqsSFr8ibt24F/zSfWqi5f7LU2iPTSj5h/Z17bC763KgkryGRu5aB/Gm6PxC1HELgsoSQ407TzL58tIdUWBupBWEWr8LVL6H0uoPwLdl/XPDpaxjCTQtmWFllcyDu9I6RhuaJpdlPZy5N+e9KVhowVgf26+JLw3uCG8R6/HPqde/wrLYlqiDRyGwdFc01zWEJYjOXE90xLVOiMXKUUfUeaYAQ== ceibal-prod\43418246@BXC270014204060"
+
+    - name: Crear usuario santi
+      user:
+        name: santi
+        group: wheel
+        comment: Santiago Torrens
+        append: yes
+        createhome: yes
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario santi 
+      authorized_key: 
+        user: santi 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDyjQ8OMYh4p4CUtlwe2ygVUptTMKnQY7dM7IU9ykwNBzQHXajAn/zKl1Pw4gmk5fepUmp3R23Z2oIdZMa8ooou6MPKGaBasU9UTUZoLRd1/FqQ7MLjTiD0BQGyZi4NJu/7JTQVfJ3df9v1a1INdB0qNOoe9Qd23Jwl2zINp4mvWDiJOKBwBnlnCkwQ5kooZkmnWClg4oD/rKbLJT1R7szAmJdraQF1LrbvuXcvcREUJSF7/AW+ZeHz+mSajNa8HVFkSjiEnqUDqTrAbSwjv4q4/FmH7P0IUqI8o+ZyB3QyqcOboJqzNHjEdqXFtnASK6mgOxHGlmGnQvaoXcsoMmb4JYkPJOB4gE7cgYOl7XodbiJDGgIKQs9gA+5yTsKTxFJZrHzYlre22fYj6gVa7l57Ds+XT2PRMwnHsRduM5Ctf4zRbgqmdEph1tyMOI8DpQBIZs9oWdMMaVlKYzFyY4xkZzRSQuL/soKfEfZ4XGDM2Itd9lSZpyYcecV5e+WdzDyFi4vSOEUds5y6KoTG4A7JcdU6lbbqqU3xthG6qOvr04e2+PCOszgeei5PQY2FKmBnwBTNLLOss8CFwj4bAWdVceRNDjhe7XbWttMeIyh9xHQ7bRcPY2w1xMYzjSFMg70Y69cM7+ICH85oESSLkJvw+ElRNMMGjtXph+d/k0BitQ== ceibal-prod\43418246@BXC270014204060"
+
+    - name: Crear usuario manu
+      user:
+        name: manu
+        group: wheel
+        comment: Manuela Fernandez
+        append: yes
+        createhome: yes    
+        # Hash de 1234
+        password: $6$3nhXdmHa$J4..LXm46BwAHroQmGaS3bDGoP0YqJgDWL4pPM5lUDA9igHaTzpEvR13xv.ZzKzwOC2SulYp9/65SbHcmbqVz/
+    - name: Agregar clave SSH a usuario manu 
+      authorized_key: 
+        user: manu 
+        key: "{{ item }}"
+        state: present
+      with_items:
+        - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDL4PwhX+9pLdQXUlj1TrOAgiZjidWerfNwebVj5RdR68eqHTyA5ZeMm86S3Fm1imuvpDzXxue/bL/P4CG/Eyi6Lk7QC+UNZbpTlRlqfLhwSwnPeIWqeZEK4evN5lo7wgnijIIh+kFW3N+/FWB5VyobmhSdFWw+/ApjTcRIWHaeAcl1tOZeeEJ42/CwYVSU8BKSskfCJNi9EQY7ig7RVtBBg4rIzAlkLbTw1nehacnAl0KkaboosN7x5kBWxX6DPJUMB9/HaikDxQykMXHi1d4S19kCYBj9oowsblDhwll+HAZGhhd2yFXqmVcZzCkU1T8ASsKwFN8ewGHFX5OqO/GhiG15MgXbyeu/79MqfrbnzHQuWdj3F4CBTCEZtDiltVXvoiDpu/iVTiOv6x3iuV1cOnkYk7zh8uE9wVZtB9Duce0f42u8kI4oYrpdYx0XKh1L0R3HQ6v+/4JUTthaoRcmTFqp+j9LOMPPpoWGDEHWSTkPcaIAyYtFBcQfVRnUB75MhmKMmQaAzFxIyA2rOg3LM2T/aw4Gyy9wRpY7be8O4pTX0mI23c9s05Tnnzu+1nL4Mebr/1YQdrO+H4HXx+2TA5dZCq7uI1Ql2YqtOQiGlgkGFeplj6oStEqHO8VxGxTHbnThLeipEWLojjBNg/JexxLQ+7SYu3gUBgNe8INw+w== ceibal-prod\43418246@BXC270014204060"

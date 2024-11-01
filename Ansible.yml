@@ -1,0 +1,23 @@
+---
+- hosts: web
+  become: true
+  tasks:
+
+        
+- name: Instalar Docker
+      package:
+        name: docker
+        state: present
+
+    - name: Iniciar servicio Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+- name: Update CentOS repositories
+  shell: |
+    sudo sed -i 's/mirror.centos.org/vault.centos.org/g' /etc/yum.repos.d/*.repo
+    sudo sed -i 's/^#.*baseurl=http/baseurl=http/g' /etc/yum.repos.d/*.repo
+    sudo sed -i 's/^mirrorlist=http/#mirrorlist=http/g' /etc/yum.repos.d/*.repo
+
