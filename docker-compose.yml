@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  aplicacion:
+    image: php:8.2-apache 
+    container_name: aplicacion
+    tty: true
+    ports:
+      - 8889:80
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - IP_BASE_DE_DATOS="10.1.1.1"
+      - USUARIO_BASE_DE_DATOS="root"
+      - CONTRASENA_BASE_DE_DATOS="root"
+      - NOMBRE_BASE_DE_DATOS="aplicacion"
+  aplicacion-con-build:
+    build: 
+      context: . 
+      dockerfile: Dockerfile
+    container_name: aplicacion_con_build
+    tty: true
+    ports:
+      - 8887:80
+    environment:
+      - IP_BASE_DE_DATOS="mysql"
+      - USUARIO_BASE_DE_DATOS="root"
+      - CONTRASENA_BASE_DE_DATOS="root"
+      - NOMBRE_BASE_DE_DATOS="base_de_datos_sigto"
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    tty: true
+    ports:
+      - 3310:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
