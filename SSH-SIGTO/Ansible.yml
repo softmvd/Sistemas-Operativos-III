@@ -15,3 +15,25 @@
         state: started
         enabled: yes
 
+        - name: Instalar CentOS 9
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Descargar el ISO de CentOS 9
+      get_url:
+        url: http://mirror.centos.org/9/isos/x86_64/CentOS-9-Stream-x86_64-minimal.iso
+        dest: /tmp/CentOS-9.iso
+        checksum: sha256
+        checksum_state: present
+        checksum_file: /tmp/CentOS-9.iso.sha256
+
+    - name: Verificar la integridad del ISO
+      command: sha256sum /tmp/CentOS-9.iso | grep -Fxq "$(cat /tmp/CentOS-9.iso.sha256)"
+      register: checksum_result
+      ignore_errors: yes
+
+    - fail:
+        msg: "El ISO de CentOS 9 está corrupto"
+      when: checksum_result.rc != 0
+
