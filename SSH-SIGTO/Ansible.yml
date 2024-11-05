@@ -37,3 +37,25 @@
         msg: "El ISO de CentOS 9 está corrupto"
       when: checksum_result.rc != 0
 
+      - hosts: all
+  become: yes
+
+  tasks:
+    - name: Update package lists
+      dnf:
+        update_cache: yes
+
+    - name: Install Git
+      dnf:
+        name: git
+        state: present
+
+    - name: Verify Git installation
+      command: git --version
+      register: git_version
+      changed_when: false
+
+    - name: Configure global Git settings (optional)
+      command: git config --global user.name "Your Name" && git config --global user.email "your_email@example.com"
+      when: git_version.rc == 0
+
