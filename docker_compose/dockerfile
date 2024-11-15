@@ -1,7 +1,7 @@
-FROM centos:7 
+FROM centos:9
 
-RUN yum install -y php php-mysql httpd 
-
+RUN yum install -y php php-mysql httpd  &&\
+    yum install -y epel-release\
 COPY *.php /var/www/html/
 
 CMD httpd -D FOREGROUND
